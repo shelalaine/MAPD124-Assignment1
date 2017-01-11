@@ -22,6 +22,7 @@
 		2D5F15FF1E268FF50008C79A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D5F16021E268FF50008C79A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D5F16041E268FF50008C79A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D5F160A1E2690200008C79A /* MAPD124-Assignment1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MAPD124-Assignment1.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		2D5F15F71E268FF50008C79A /* MAPD124-Assignment1 */ = {
 			isa = PBXGroup;
 			children = (
+				2D5F160A1E2690200008C79A /* MAPD124-Assignment1.entitlements */,
 				2D5F15F81E268FF50008C79A /* AppDelegate.swift */,
 				2D5F15FA1E268FF50008C79A /* ViewController.swift */,
 				2D5F15FC1E268FF50008C79A /* Main.storyboard */,
@@ -98,6 +100,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2BULHRS882;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
