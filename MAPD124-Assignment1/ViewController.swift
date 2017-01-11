@@ -10,16 +10,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    // Indicate that no number / digit is pressed
+    var numberIsClicked = false
+    
+    @IBOutlet weak var labelDisplay: UILabel!
+
+    
+    // 0 - 9 button pressed event handler
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        
+        if (numberIsClicked) {
+            // Append the number pressed to the right-most of the label
+            labelDisplay.text = labelDisplay.text! + "\(sender.currentTitle!)"
+        } else {
+            // Display the number pressed
+            labelDisplay.text = "\(sender.currentTitle!)"
+            // Indicate that a number is already pressed
+            numberIsClicked = true
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // AC button pressed event handler
+    @IBAction func buttonACClicked(_ sender: UIButton) {
+        // Set the display to 0
+        labelDisplay.text = "0"
+        // Reset the number clicked status
+        numberIsClicked = false
     }
-
-
 }
 
