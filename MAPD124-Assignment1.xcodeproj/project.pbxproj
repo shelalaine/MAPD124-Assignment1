@@ -12,6 +12,7 @@
 		2D5F15FE1E268FF50008C79A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F15FC1E268FF50008C79A /* Main.storyboard */; };
 		2D5F16001E268FF50008C79A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F15FF1E268FF50008C79A /* Assets.xcassets */; };
 		2D5F16031E268FF50008C79A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F16011E268FF50008C79A /* LaunchScreen.storyboard */; };
+		2D8A4BCA1E2939740070047B /* CalculatorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8A4BC91E2939740070047B /* CalculatorOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		2D5F16021E268FF50008C79A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D5F16041E268FF50008C79A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D5F160A1E2690200008C79A /* MAPD124-Assignment1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MAPD124-Assignment1.entitlements"; sourceTree = "<group>"; };
+		2D8A4BC91E2939740070047B /* CalculatorOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,15 +57,24 @@
 		2D5F15F71E268FF50008C79A /* MAPD124-Assignment1 */ = {
 			isa = PBXGroup;
 			children = (
-				2D5F160A1E2690200008C79A /* MAPD124-Assignment1.entitlements */,
-				2D5F15F81E268FF50008C79A /* AppDelegate.swift */,
 				2D5F15FA1E268FF50008C79A /* ViewController.swift */,
+				2D8A4BC91E2939740070047B /* CalculatorOperation.swift */,
 				2D5F15FC1E268FF50008C79A /* Main.storyboard */,
+				2D8A4BC81E2937D30070047B /* Support */,
+			);
+			path = "MAPD124-Assignment1";
+			sourceTree = "<group>";
+		};
+		2D8A4BC81E2937D30070047B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2D5F160A1E2690200008C79A /* MAPD124-Assignment1.entitlements */,
 				2D5F15FF1E268FF50008C79A /* Assets.xcassets */,
 				2D5F16011E268FF50008C79A /* LaunchScreen.storyboard */,
 				2D5F16041E268FF50008C79A /* Info.plist */,
+				2D5F15F81E268FF50008C79A /* AppDelegate.swift */,
 			);
-			path = "MAPD124-Assignment1";
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D5F15FB1E268FF50008C79A /* ViewController.swift in Sources */,
+				2D8A4BCA1E2939740070047B /* CalculatorOperation.swift in Sources */,
 				2D5F15F91E268FF50008C79A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +321,7 @@
 				2D5F16091E268FF50008C79A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
