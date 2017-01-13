@@ -22,6 +22,21 @@ class CalculatorOperation {
         return op1 + op2
     }
     
+    // Subtract operation taking in two operands and returning the result as double
+    func operationSubtract(op1: Double, op2: Double) -> Double {
+        return op1 - op2
+    }
+    
+    // Multiply operation taking in two operands and returning the result as double
+    func operationMultiply(op1: Double, op2: Double) -> Double {
+        return op1 * op2
+    }
+    
+    // Divide operation taking in two operands and returning the result as double
+    func operationDivide(op1: Double, op2: Double) -> Double {
+        return op1 / op2
+    }
+    
     // Set the operand of the math operation
     func setOperand(operand: Double) {
         resultOperation = operand
@@ -30,7 +45,14 @@ class CalculatorOperation {
     // Perform the desired operation such as add, subtract, multiply, divide, and getting the result
     func performOperation(symbol: String) {
         switch symbol {
-        case "+": pendingOperation = PendingOperation(firstOperand: resultOperation, binaryFunction: operationAdd)
+        case "+":
+            pendingOperation = PendingOperation(firstOperand: resultOperation, binaryFunction: operationAdd)
+        case "−":
+            pendingOperation = PendingOperation(firstOperand: resultOperation, binaryFunction: operationSubtract)
+        case "×":
+            pendingOperation = PendingOperation(firstOperand: resultOperation, binaryFunction: operationMultiply)
+        case "÷":
+            pendingOperation = PendingOperation(firstOperand: resultOperation, binaryFunction: operationDivide)
         case "=":
             if (pendingOperation != nil) {
                 resultOperation = pendingOperation!.binaryFunction(pendingOperation!.firstOperand, resultOperation)
