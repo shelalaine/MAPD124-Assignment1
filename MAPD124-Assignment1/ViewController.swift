@@ -89,5 +89,20 @@ class ViewController: UIViewController {
         numberIsClicked = false
         periodIsClicked = false
     }
+    
+    // Plus / Minus sign button pressed event handler
+    @IBAction func buttonSignClicked(_ sender: UIButton) {
+        
+        // Get the digits shown 
+        if var digits = Double(labelDisplay.text!) {
+            // Toggle the sign of the number if other than zero
+            if (digits != 0.0) {
+                digits *= -1
+            }
+            
+            // Show the new value with the updated sign
+            labelDisplay.text = String(digits)
+        }
+    }
 }
 
