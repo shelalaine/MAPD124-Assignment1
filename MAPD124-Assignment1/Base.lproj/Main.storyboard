@@ -129,6 +129,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ckd-Yh-WH1"/>
+                                    <action selector="buttonPeriodClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KxL-zI-dIn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiO-2f-Iaa">

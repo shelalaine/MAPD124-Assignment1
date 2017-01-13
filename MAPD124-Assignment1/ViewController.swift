@@ -10,14 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // Indicate that no number / digit is pressed
-    private var numberIsClicked = false
     private var operation = CalculatorOperation()
+
+    // Number and period clicked status
+    private var numberIsClicked = false
+    private var periodIsClicked = false
     
     @IBOutlet private weak var labelDisplay: UILabel!
 
     
-    // 0 - 9 and "." button pressed event handler
+    // 0 - 9 button pressed event handler
     @IBAction private func buttonClicked(_ sender: UIButton) {
         
         if (numberIsClicked) {
@@ -26,19 +28,36 @@ class ViewController: UIViewController {
         } else {
             // Display the number pressed if other than zero
             if (sender.currentTitle! != "0") {
-
+                
                 // Show the number pressed
-                if (sender.currentTitle! == ".") {
-                    labelDisplay.text = "0\(sender.currentTitle!)"
-                } else {
-                    labelDisplay.text = "\(sender.currentTitle!)"
-                }
+                labelDisplay.text = "\(sender.currentTitle!)"
                 
                 // Indicate that a number is already pressed
                 numberIsClicked = true
             }
         }
     }
+    
+    // Period (".") button pressed event handler
+    @IBAction func buttonPeriodClicked(_ sender: UIButton) {
+        
+        if !numberIsClicked {
+            labelDisplay.text = "0\(sender.currentTitle!)"
+            
+            // Indicate that number and period has been clicked
+            periodIsClicked = true
+            numberIsClicked = true
+        } else {
+            if !periodIsClicked {
+                // Append the "." pressed to the right-most of the label
+                labelDisplay.text = labelDisplay.text! + "\(sender.currentTitle!)"
+                
+                // Indicate that period has been clicked
+                periodIsClicked = true
+            }
+        }
+    }
+    
     
     // Binary operator (×, ÷, +, −) button pressed event handler
     @IBAction func buttonBinaryOperatorsClicked(_ sender: UIButton) {
@@ -55,8 +74,9 @@ class ViewController: UIViewController {
             labelDisplay.text = String(operation.result)
         }
         
-        // Indicate that no number is pressed
+        // Indicate that neither number nor period is pressed
         numberIsClicked = false
+        periodIsClicked = false
     }
     
     
@@ -65,8 +85,9 @@ class ViewController: UIViewController {
         // Set the display to 0
         labelDisplay.text = "0"
         
-        // Reset the number clicked status
+        // Reset the number and period clicked status
         numberIsClicked = false
+        periodIsClicked = false
     }
 }
 
