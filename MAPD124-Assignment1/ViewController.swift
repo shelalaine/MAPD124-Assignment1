@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var labelDisplay: UILabel!
 
     
-    // 0 - 9 button pressed event handler
+    // 0 - 9 and "." button pressed event handler
     @IBAction private func buttonClicked(_ sender: UIButton) {
         
         if (numberIsClicked) {
@@ -26,7 +26,13 @@ class ViewController: UIViewController {
         } else {
             // Display the number pressed if other than zero
             if (sender.currentTitle! != "0") {
-                labelDisplay.text = "\(sender.currentTitle!)"
+
+                // Show the number pressed
+                if (sender.currentTitle! == ".") {
+                    labelDisplay.text = "0\(sender.currentTitle!)"
+                } else {
+                    labelDisplay.text = "\(sender.currentTitle!)"
+                }
                 
                 // Indicate that a number is already pressed
                 numberIsClicked = true
