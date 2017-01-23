@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1FDC651E36718D0061C3DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D1FDC641E36718D0061C3DE /* Images.xcassets */; };
 		2D5F15F91E268FF50008C79A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F15F81E268FF50008C79A /* AppDelegate.swift */; };
 		2D5F15FB1E268FF50008C79A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F15FA1E268FF50008C79A /* ViewController.swift */; };
 		2D5F15FE1E268FF50008C79A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5F15FC1E268FF50008C79A /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D1FDC641E36718D0061C3DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2D5F15F51E268FF50008C79A /* MAPD124-Assignment1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MAPD124-Assignment1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5F15F81E268FF50008C79A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D5F15FA1E268FF50008C79A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				2D5F16011E268FF50008C79A /* LaunchScreen.storyboard */,
 				2D5F16041E268FF50008C79A /* Info.plist */,
 				2D5F15F81E268FF50008C79A /* AppDelegate.swift */,
+				2D1FDC641E36718D0061C3DE /* Images.xcassets */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D5F16031E268FF50008C79A /* LaunchScreen.storyboard in Resources */,
+				2D1FDC651E36718D0061C3DE /* Images.xcassets in Resources */,
 				2D5F16001E268FF50008C79A /* Assets.xcassets in Resources */,
 				2D5F15FE1E268FF50008C79A /* Main.storyboard in Resources */,
 			);
