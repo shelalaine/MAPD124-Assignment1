@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     @IBAction func buttonBinaryOperatorsClicked(_ sender: UIButton) {
         
         if numberIsClicked {
-            operation.setOperand(operand: Double(labelDisplay.text!)!)
+            operation.setOperand(operand: labelDisplay.text!)
         }
         
         if let binaryOperator = sender.currentTitle {
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
             operation.performOperation(symbol: binaryOperator)
             
             // Display the result
-            labelDisplay.text = String(operation.result)
+            labelDisplay.text = operation.result
         }
         
         // Indicate that neither number nor period is pressed
@@ -84,6 +84,8 @@ class ViewController: UIViewController {
     @IBAction private func buttonACClicked(_ sender: UIButton) {
         // Set the display to 0
         labelDisplay.text = "0"
+        // Re-initialize any calculator operation
+        operation.initOperation();
         
         // Reset the number and period clicked status
         numberIsClicked = false
