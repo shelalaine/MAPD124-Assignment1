@@ -26,6 +26,7 @@ class CalculatorOperation {
         "√": Operation.UnaryOperation(sqrt),
         "Inv": Operation.UnaryOperation({ (op1: Double) -> Double in return 1 / op1 }),
         "%": Operation.UnaryOperation({ (op1: Double) -> Double in return op1 / 100 }),
+        "+/-": Operation.UnaryOperation({ (op1: Double) -> Double in return (op1 != 0) ? (op1 * -1) : 0}),
         
         // Add operation taking in two operands and returning the result as double
         "+": Operation.BinaryOperation({ (op1: Double, op2: Double) -> Double in return op1 + op2 }),
@@ -43,7 +44,7 @@ class CalculatorOperation {
     
     private enum Operation {
         case Constant(Double)                       // For constants such as "π", "e", the associated value is Double
-        case UnaryOperation((Double) -> Double)     // For unary operation such as "√" and "Inv", the associated value is a function
+        case UnaryOperation((Double) -> Double)     // For unary operation such as "√", "Inv", "%", and "+/-", the associated value is a function
         case BinaryOperation((Double, Double) -> Double) // For binary operation such as "×", "÷", "+", and "−", the associated value is a function
         case Equals
     }
@@ -96,6 +97,17 @@ class CalculatorOperation {
     // Return the result of the operation
     var result: String {
         get {
+            // Split the strings into the digits before and after the "." decimal sign
+            let data = String(resultOperation).components(separatedBy: ".")
+
+            if (data.count > 1) {
+                // Return the whole digit(s) as a String if the decimal part is 0
+                if (Double(data[1]) == 0.0) {
+                    return data[0]
+                }
+            }
+            
+            // Return the entire number as a String
             return String(resultOperation)
         }
     }

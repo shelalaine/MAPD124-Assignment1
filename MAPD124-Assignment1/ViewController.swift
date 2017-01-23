@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     
     // Button pressed event handler to the following:
     //  Binary operator (×, ÷, +, −) 
-    //  Unary operator (π, e, √, %, and Inv)
+    //  Unary operator (π, e, √, %, +/-, and Inv)
     //  Equals
     @IBAction func operationsClicked(_ sender: UIButton) {
         
@@ -95,19 +95,5 @@ class ViewController: UIViewController {
         periodIsClicked = false
     }
     
-    // Plus / Minus sign button pressed event handler
-    @IBAction func buttonSignClicked(_ sender: UIButton) {
-        
-        // Get the digits shown 
-        if var digits = Double(labelDisplay.text!) {
-            // Toggle the sign of the number if other than zero
-            if (digits != 0.0) {
-                digits *= -1
-            }
-            
-            // Show the new value with the updated sign
-            labelDisplay.text = String(digits)
-        }
-    }
 }
 
