@@ -37,6 +37,7 @@ class CalculatorOperation {
     
     private var pendingOperation: PendingOperation?
     private var resultOperation = 0.0
+    private var operandStatus = false
     private var operations: Dictionary<String, Operation> = [
         "π": Operation.Constant(M_PI),
         "e": Operation.Constant(M_E),
@@ -77,11 +78,12 @@ class CalculatorOperation {
     // Set the operand of the math operation
     func setOperand(operand: String) {
         resultOperation = Double(operand)!
+        operandStatus = true
     }
     
     // Execute the pending binary operation
     func doPendingOperation() {
-        if (pendingOperation != nil) {
+        if (pendingOperation != nil && operandStatus) {
             resultOperation = pendingOperation!.binaryFunction(pendingOperation!.firstOperand, resultOperation)
             pendingOperation = nil
         }
@@ -95,14 +97,18 @@ class CalculatorOperation {
             case Operation.Constant(let associatedValue):
                 //
                 resultOperation = associatedValue
+                operandStatus = true
             case Operation.UnaryOperation(let associatedFunction):
                 // 
                 resultOperation = associatedFunction(resultOperation)
+                operandStatus = true
             case Operation.BinaryOperation(let associatedFunction):
                 // Execute pending binary operation
                 doPendingOperation()
                 // Execute current binary operation
                 pendingOperation = PendingOperation(firstOperand: resultOperation, binaryFunction: associatedFunction)
+                // Reset the operand status
+                operandStatus = false
             case Operation.Equals:
                 // Execute pending binary operation
                 doPendingOperation()

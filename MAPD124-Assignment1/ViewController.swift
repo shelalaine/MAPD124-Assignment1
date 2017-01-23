@@ -34,18 +34,17 @@ class ViewController: UIViewController {
         
         if (numberIsClicked) {
             // Append the number pressed to the right-most of the label
-            labelDisplay.text = labelDisplay.text! + "\(sender.currentTitle!)"
-        } else {
-            // Display the number pressed if other than zero
-            if (sender.currentTitle! != "0") {
-                
-                // Show the number pressed
-                labelDisplay.text = "\(sender.currentTitle!)"
-                
-                // Indicate that a number is already pressed
-                numberIsClicked = true
+            if (labelDisplay.text! != "0") {
+                labelDisplay.text = labelDisplay.text! + "\(sender.currentTitle!)"
+                return
             }
         }
+        
+        // Show the number pressed
+        labelDisplay.text = "\(sender.currentTitle!)"
+                
+        // Indicate that a number is already pressed
+        numberIsClicked = true
     }
     
     // Period (".") button pressed event handler
@@ -78,15 +77,23 @@ class ViewController: UIViewController {
         if numberIsClicked {
             operation.setOperand(operand: labelDisplay.text!)
         }
-        
-        if let binaryOperator = sender.currentTitle {
-            // Perform binary operation
-            operation.performOperation(symbol: binaryOperator)
+
+        if let operationSign = sender.currentTitle {
+            print(operationSign)
             
+//            // Do not proceed with the calculation if (+, -, x, or /) button is pressed and no new number is clicked
+//            if (!numberIsClicked) {
+//                if (operationSign == "+" || operationSign == "−" || operationSign == "×" || operationSign == "÷") {
+//                    return
+//                }
+//            }
+            // Perform binary operation
+            operation.performOperation(symbol: operationSign)
+                
             // Display the result
             labelDisplay.text = operation.result
         }
-        
+            
         // Indicate that neither number nor period is pressed
         numberIsClicked = false
         periodIsClicked = false
