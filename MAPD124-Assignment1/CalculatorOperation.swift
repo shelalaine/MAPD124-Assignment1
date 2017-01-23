@@ -1,8 +1,25 @@
 //
-//  CalculatorOperation.swift
-//  MAPD124-Assignment1
+//  File Name:      CalculatorOperation.swift
+//  Project Name:   MAPD124-Assignment1
+//  Description:    This class handles the different math calculations such as unary and binary operations and
+//                  returning the values of a specific symbol.
 //
-//  Created by Shelalaine Chan on 2017-01-13.
+//  Created by:     Shelalaine Chan
+//  Student ID:     300924281
+//  Change History: 2017-01-13, Created
+//                  2017-01-22, Add initOperation method
+//                              Update the switch statement of performOperation method 
+//                              Add operations variable with a Dictionary data type containing the constants 
+//                                  and different operations
+//                              Add comments in the binaryFunction variable
+//                              Remove the operationAdd, operationSubtract, operationMultiply, and operationDivide functions
+//                              Integrate the binary operation for add, subtract, multiply, and divide as a closure to its 
+//                                  corresponding symbol within the operations variable
+//                              Update the setOperand parameter data type from Double to String
+//                              Add doPendingOperation to execute pending binary operation if not nil
+//                  2017-01-23, Update operations Dictionary to include the unary operation handling of Inv and
+//                                  % symbols
+//
 //  Copyright © 2017 ShelalaineChan. All rights reserved.
 //
 

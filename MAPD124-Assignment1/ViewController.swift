@@ -1,8 +1,18 @@
 //
-//  ViewController.swift
-//  MAPD124-Assignment1
+//  File Name:      ViewController.swift
+//  Project Name:   MAPD124-Assignment1
+//  Description:    This is the UI View Controller where various button event handlers are defined and 
+//                  texts for the UILabel are updated.
 //
-//  Created by Shelalaine Chan on 2017-01-11.
+//  Created by:     Shelalaine Chan
+//  Student ID:     300924281
+//  Change History: 2017-01-11, Created
+//                  2017-01-13, Add a separate period(".") button event handler called buttonPeriodClicked function
+//                  2017-01-22, Rename buttonBinaryOperatorsClicked to operationsClicked function 
+//                              since this will now serve as button pressed handler for binary and unary 
+//                              operations, and equals
+//                  2017-01-23, Remove buttonSignClicked function
+//
 //  Copyright © 2017 ShelalaineChan. All rights reserved.
 //
 
