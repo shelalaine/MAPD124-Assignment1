@@ -79,14 +79,6 @@ class ViewController: UIViewController {
         }
 
         if let operationSign = sender.currentTitle {
-            print(operationSign)
-            
-//            // Do not proceed with the calculation if (+, -, x, or /) button is pressed and no new number is clicked
-//            if (!numberIsClicked) {
-//                if (operationSign == "+" || operationSign == "−" || operationSign == "×" || operationSign == "÷") {
-//                    return
-//                }
-//            }
             // Perform binary operation
             operation.performOperation(symbol: operationSign)
                 
