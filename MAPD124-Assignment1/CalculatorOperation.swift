@@ -4,7 +4,7 @@
 //  Description:    This class handles the different math calculations such as unary and binary operations and
 //                  returning the values of a specific symbol.
 //
-//  Created by:     Shelalaine Chan on .
+//  Created by:     Shelalaine Chan
 //  Student ID:     300924281
 //  Change History: 2017-01-13, Created
 //                  2017-01-22, Add initOperation method
