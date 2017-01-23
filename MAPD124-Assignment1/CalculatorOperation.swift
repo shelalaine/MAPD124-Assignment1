@@ -24,6 +24,8 @@ class CalculatorOperation {
         "π": Operation.Constant(M_PI),
         "e": Operation.Constant(M_E),
         "√": Operation.UnaryOperation(sqrt),
+        "Inv": Operation.UnaryOperation({ (op1: Double) -> Double in return 1 / op1 }),
+        "%": Operation.UnaryOperation({ (op1: Double) -> Double in return op1 / 100 }),
         
         // Add operation taking in two operands and returning the result as double
         "+": Operation.BinaryOperation({ (op1: Double, op2: Double) -> Double in return op1 + op2 }),
@@ -67,14 +69,16 @@ class CalculatorOperation {
         }
     }
     
-    // Perform the desired operation such as add, subtract, multiply, divide, and getting the result
+    // Perform the desired mathematical operation
     func performOperation(symbol: String) {
         
         if let operation = operations[symbol] {
             switch operation {
             case Operation.Constant(let associatedValue):
+                //
                 resultOperation = associatedValue
             case Operation.UnaryOperation(let associatedFunction):
+                // 
                 resultOperation = associatedFunction(resultOperation)
             case Operation.BinaryOperation(let associatedFunction):
                 // Execute pending binary operation

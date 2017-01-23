@@ -59,8 +59,11 @@ class ViewController: UIViewController {
     }
     
     
-    // Binary operator (×, ÷, +, −) button pressed event handler
-    @IBAction func buttonBinaryOperatorsClicked(_ sender: UIButton) {
+    // Button pressed event handler to the following:
+    //  Binary operator (×, ÷, +, −) 
+    //  Unary operator (π, e, √, %, and Inv)
+    //  Equals
+    @IBAction func operationsClicked(_ sender: UIButton) {
         
         if numberIsClicked {
             operation.setOperand(operand: labelDisplay.text!)
